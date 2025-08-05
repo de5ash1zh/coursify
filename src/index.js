@@ -4,10 +4,12 @@ dotenv.config();
 
 import db from './config/db.js';
 const app = express();
+app.use(express.json());
+import userRoutes from './routes/users.js';
 
 const port = process.env.PORT || 4000;
 
-app.get('/test', () => {
+app.get('/test', (req, res) => {
   res.send('All good,Welcome');
 });
 
@@ -22,7 +24,5 @@ async function startServer() {
   }
 }
 startServer();
-
-app.listen(port, () => {
-  console.log(`serving on port: ${port}`);
-});
+//routes setup
+app.use('/', userRoutes);
