@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: coursify-api
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: coursify-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+
+databases:
+  - name: coursify-db
+    databaseName: coursify_db
+    user: coursify_user
+    plan: free 
