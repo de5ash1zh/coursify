@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(helmet());
 import userRoutes from './routes/users.js';
 import courseRoutes from './routes/courses.js';
+import enrollmentRoutes from './routes/enrollments.js';
 
 const port = process.env.PORT || 4000;
 
@@ -30,3 +31,4 @@ startServer();
 //routes setup
 app.use('/', userRoutes);
 app.use('/api/v1/courses', courseRoutes);
+app.use('/api/v1/enrollments', enrollmentRoutes);
