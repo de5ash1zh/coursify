@@ -6,6 +6,7 @@ import db from './config/db.js';
 const app = express();
 app.use(express.json());
 import userRoutes from './routes/users.js';
+import courseRoutes from './routes/courses.js';
 
 const port = process.env.PORT || 4000;
 
@@ -26,3 +27,4 @@ async function startServer() {
 startServer();
 //routes setup
 app.use('/', userRoutes);
+app.use('/api/v1/courses', courseRoutes);
