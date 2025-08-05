@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: course-app-postgres
+    environment:
+      POSTGRES_USER: course_user
+      POSTGRES_PASSWORD: course_password
+      POSTGRES_DB: course_app
+    ports:
+      - '5432:5432'
+    volumes:
+      - course_app_pgdata:/var/lib/postgresql/data
+volumes:
+  course_app_pgdata:

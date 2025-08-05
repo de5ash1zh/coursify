@@ -47,3 +47,5 @@ coverage/
 # PostgreSQL data dumps
 *.sql
 *.dump
+
+/src/generated/prisma
