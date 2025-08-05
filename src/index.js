@@ -3,8 +3,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import db from './config/db.js';
+import helmet from 'helmet';
 const app = express();
 app.use(express.json());
+app.use(helmet());
 import userRoutes from './routes/users.js';
 import courseRoutes from './routes/courses.js';
 
