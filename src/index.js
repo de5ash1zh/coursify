@@ -7,12 +7,9 @@ import helmet from 'helmet';
 const app = express();
 app.use(express.json());
 app.use(helmet());
-app.use(express.static('public')); // Serve static files
 import userRoutes from './routes/users.js';
 import courseRoutes from './routes/courses.js';
 import enrollmentRoutes from './routes/enrollments.js';
-import paymentRoutes from './routes/payments.js';
-import reviewRoutes from './routes/reviews.js';
 
 const port = process.env.PORT || 4000;
 
@@ -35,5 +32,3 @@ startServer();
 app.use('/', userRoutes);
 app.use('/api/v1/courses', courseRoutes);
 app.use('/api/v1/enrollments', enrollmentRoutes);
-app.use('/api/v1/payments', paymentRoutes);
-app.use('/api/v1', reviewRoutes);

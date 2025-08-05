@@ -1,73 +1,28 @@
 {
   "name": "coursify",
   "version": "1.0.0",
-  "description": "A comprehensive learning management system",
+  "description": "",
   "main": "src/index.js",
-  "type": "module",
   "scripts": {
-    "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "lint": "eslint src/",
-    "lint:fix": "eslint src/ --fix",
-    "db:migrate": "prisma migrate deploy",
-    "db:generate": "prisma generate",
-    "db:seed": "node prisma/seed.js",
-    "db:studio": "prisma studio",
-    "build": "npm run db:generate",
-    "docker:build": "docker build -t coursify .",
-    "docker:run": "docker run -p 3000:3000 coursify",
-    "docker:compose": "docker-compose up -d",
-    "docker:compose:down": "docker-compose down",
-    "docker:compose:logs": "docker-compose logs -f"
+    "seed": "node prisma/seed.js"
   },
-  "keywords": [
-    "education",
-    "learning",
-    "courses",
-    "nodejs",
-    "express",
-    "prisma",
-    "postgresql"
-  ],
-  "author": "Your Name",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
   "dependencies": {
     "@prisma/client": "^6.13.0",
-    "bcrypt": "^5.1.1",
+    "bcrypt": "^6.0.0",
     "dotenv": "^17.2.1",
-    "express": "^4.18.2",
-    "express-rate-limit": "^7.1.5",
-    "helmet": "^7.1.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
+    "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.2",
-    "razorpay": "^2.9.2"
+    "pg": "^8.16.3",
+    "prisma": "^6.13.0"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "jest": "^29.7.0",
-    "nodemon": "^3.1.10",
-    "prisma": "^6.13.0",
-    "supertest": "^7.0.0"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "!src/index.js"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 70,
-        "functions": 70,
-        "lines": 70,
-        "statements": 70
-      }
-    }
+    "prettier": "^3.6.2"
   }
 }
